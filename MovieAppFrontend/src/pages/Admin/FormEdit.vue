@@ -19,6 +19,7 @@
       <q-card-section class="row">
           <q-form
             @submit="onSubmit()"
+            @reset="onReset()"
         class="q-gutter-md col-md-6 col-xs-12"
         >
         <q-input
@@ -133,6 +134,27 @@ export default {
             this.$showNotif(res.data.pesan, 'negative')
           }
         })
+    },
+    onReset () {
+      this.form = {
+        judulFilm: null,
+        harga: 0,
+        tahun: null,
+        genre: null,
+        rating: 0,
+        deskripsi: null
+      }
+      this.optionGenre = [
+        'Adventure',
+        'Horor',
+        'Mystery',
+        'Psychological',
+        'Demantia',
+        'Comedy',
+        'Action',
+        'Romance',
+        'Music']
+      this.image = null
     }
   }
 }
